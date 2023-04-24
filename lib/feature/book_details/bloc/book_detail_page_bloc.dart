@@ -20,6 +20,7 @@ class BookDetailPageBloc extends Bloc<BookDetailPageEvent, BookDetailPageState>
           const BookDetailPageState.processing(
             book: null,
             anotherBooksFromSameAuthor: [],
+            booksWithSameCategory: [],
           ),
         ) {
     on<BookDetailPageEvent>((event, emit) {
@@ -40,6 +41,7 @@ class BookDetailPageBloc extends Bloc<BookDetailPageEvent, BookDetailPageState>
       BookDetailPageState.processing(
         book: state.book,
         anotherBooksFromSameAuthor: state.anotherBooksFromSameAuthor,
+        booksWithSameCategory: state.booksWithSameCategory,
       ),
     );
 
@@ -51,6 +53,14 @@ class BookDetailPageBloc extends Bloc<BookDetailPageEvent, BookDetailPageState>
       author: book.author,
     );
 
+    anotherBooks.removeWhere(
+      (element) => element.id == book.id,
+    );
+
+    final booksWithSameCategory = await _booksRepository.getBooksByCategory(
+      category: book.category,
+    );
+
     await _booksRepository.changeLastOpenedAt(
       book.id,
     );
@@ -59,6 +69,7 @@ class BookDetailPageBloc extends Bloc<BookDetailPageEvent, BookDetailPageState>
       BookDetailPageState.idle(
         book: book,
         anotherBooksFromSameAuthor: anotherBooks,
+        booksWithSameCategory: booksWithSameCategory,
       ),
     );
   }
@@ -98,6 +109,7 @@ class BookDetailPageBloc extends Bloc<BookDetailPageEvent, BookDetailPageState>
       BookDetailPageState.successfullyDeleted(
         book: state.book,
         anotherBooksFromSameAuthor: state.anotherBooksFromSameAuthor,
+        booksWithSameCategory: state.booksWithSameCategory,
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:books_app/core/logic/get_it.dart';
 import 'package:books_app/feature/book_details/model/book_model.dart';
 import 'package:books_app/feature/book_details/widget/change_favorites_button.dart';
+import 'package:books_app/feature/home/widget/books_horizontal_list.dart';
 import 'package:books_app/feature/read_book/read_book_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -118,6 +119,9 @@ class _BookDetailsPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String category =
+        context.read<BookDetailPageBloc>().state.book?.category ?? '';
+
     return BlocListener<BookDetailPageBloc, BookDetailPageState>(
       listener: (context, state) {
         state.mapOrNull(
@@ -146,32 +150,130 @@ class _BookDetailsPageBody extends StatelessWidget {
             );
           }
           return SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+            ),
             child: Column(
               children: [
-                _MainInfo(bookModel: book),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                  ),
+                  child: _MainInfo(bookModel: book),
+                ),
                 const SizedBox(
                   height: 32,
                 ),
                 if (book.description != null && book.description!.isNotEmpty)
-                  _Description(
-                    description: book.description!,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: _Description(
+                      description: book.description!,
+                    ),
                   ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '${book.author}-дың басқа кітаптары',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
+                      child: Text(
+                        '${book.author} басқа кітаптары',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF698809),
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
+                      child: Divider(
+                        thickness: 2,
                         color: Color(0xFF698809),
                       ),
                     ),
-                    const Divider(
-                      height: 16,
-                      thickness: 2,
-                      color: Color(0xFF698809),
+                    BlocSelector<BookDetailPageBloc, BookDetailPageState,
+                        List<BookModel>>(
+                      selector: (state) {
+                        return state.anotherBooksFromSameAuthor;
+                      },
+                      builder: (context, anotherBooksFromSameAuthor) {
+                        if (anotherBooksFromSameAuthor.isEmpty) {
+                          return const Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Center(
+                              child: Text(
+                                'Табылмады',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        return BooksHorizontalList(
+                          books: anotherBooksFromSameAuthor,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
+                      child: Text(
+                        '$category жанрының басқа кітаптары',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF698809),
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
+                      child: Divider(
+                        thickness: 2,
+                        color: Color(0xFF698809),
+                      ),
+                    ),
+                    BlocSelector<BookDetailPageBloc, BookDetailPageState,
+                        List<BookModel>>(
+                      selector: (state) {
+                        return state.booksWithSameCategory;
+                      },
+                      builder: (context, booksWithSameCategory) {
+                        if (booksWithSameCategory.isEmpty) {
+                          return const Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Center(
+                              child: Text(
+                                'Табылмады',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        return BooksHorizontalList(
+                          books: booksWithSameCategory,
+                        );
+                      },
                     ),
                   ],
                 )

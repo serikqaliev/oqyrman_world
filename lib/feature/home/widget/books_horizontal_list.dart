@@ -9,58 +9,51 @@ class BooksHorizontalList extends StatelessWidget {
   const BooksHorizontalList({
     Key? key,
     required this.books,
+    this.title,
   }) : super(key: key);
 
   final List<BookModel> books;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<HomePageBloc, HomePageState, List<BookModel>>(
-      selector: (state) {
-        return state.lastOpenedBooks;
-      },
-      builder: (context, lastOpenedBooks) {
-        return Visibility(
-          visible: lastOpenedBooks.isNotEmpty,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 16,
+    return Visibility(
+      visible: books.isNotEmpty,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (title != null)
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 16,
               ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 16,
-                ),
-                child: Text(
-                  'Соңғы ашылған кітаптар',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+              child: Text(
+                title!,
+                textAlign: TextAlign.start,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
-                height: 180,
-                child: ListView.separated(
-                  padding: const EdgeInsets.all(
-                    16,
-                  ),
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => BookInHorizontalList(
-                    bookModel: lastOpenedBooks[index],
-                  ),
-                  separatorBuilder: (context, index) => const SizedBox(
-                    width: 16,
-                  ),
-                  itemCount: lastOpenedBooks.length,
-                ),
+            ),
+          SizedBox(
+            height: 180,
+            child: ListView.separated(
+              padding: const EdgeInsets.all(
+                16,
               ),
-            ],
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => BookInHorizontalList(
+                bookModel: books[index],
+              ),
+              separatorBuilder: (context, index) => const SizedBox(
+                width: 16,
+              ),
+              itemCount: books.length,
+            ),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }

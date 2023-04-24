@@ -145,8 +145,14 @@ class _HomePageBodyState extends State<_HomePageBody> {
             return state.lastOpenedBooks;
           },
           builder: (context, lastOpenedBooks) {
-            return BooksHorizontalList(
-              books: lastOpenedBooks,
+            return Padding(
+              padding: const EdgeInsets.only(
+                top: 16,
+              ),
+              child: BooksHorizontalList(
+                title: 'Соңғы ашылған кітаптар',
+                books: lastOpenedBooks,
+              ),
             );
           },
         ),

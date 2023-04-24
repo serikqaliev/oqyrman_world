@@ -10,6 +10,7 @@ class BookDetailPageState with _$BookDetailPageState {
   const factory BookDetailPageState.idle({
     @Default(null) final BookModel? book,
     @Default([]) final List<BookModel> anotherBooksFromSameAuthor,
+    @Default([]) final List<BookModel> booksWithSameCategory,
     @Default('Idle') final String message,
   }) = IdleBookDetailPageState;
 
@@ -17,6 +18,7 @@ class BookDetailPageState with _$BookDetailPageState {
   const factory BookDetailPageState.processing({
     required final BookModel? book,
     required final List<BookModel> anotherBooksFromSameAuthor,
+    required final List<BookModel> booksWithSameCategory,
     @Default('Processing') final String message,
   }) = ProcessingBookDetailPageState;
 
@@ -24,12 +26,14 @@ class BookDetailPageState with _$BookDetailPageState {
   const factory BookDetailPageState.successful({
     required final BookModel? book,
     required final List<BookModel> anotherBooksFromSameAuthor,
+    required final List<BookModel> booksWithSameCategory,
     @Default('Successful') final String message,
   }) = SuccessfulBookDetailPageState;
 
   const factory BookDetailPageState.successfullyDeleted({
     required final BookModel? book,
     required final List<BookModel> anotherBooksFromSameAuthor,
+    required final List<BookModel> booksWithSameCategory,
     @Default('Successful') final String message,
   }) = SuccessfullyDeletedBookDetailPageState;
 
@@ -37,6 +41,7 @@ class BookDetailPageState with _$BookDetailPageState {
   const factory BookDetailPageState.error({
     required final BookModel? book,
     required final List<BookModel> anotherBooksFromSameAuthor,
+    required final List<BookModel> booksWithSameCategory,
     @Default('Error') final String message,
   }) = ErrorBookDetailPageState;
 

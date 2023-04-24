@@ -82,15 +82,15 @@ class BooksRepositoryImpl implements BooksRepository {
 
     return BookModel(
       id: book.id,
-      title: book.title,
-      author: book.author,
+      title: book.title.trim(),
+      author: book.author.trim(),
       description: book.description,
       isFavorite: book.isFavorite,
       pdfFile: pdfFile,
       createdAt: book.createdAt,
       updatedAt: book.updatedAt,
       lastOpenedAt: book.lastOpenedAt,
-      category: book.category,
+      category: book.category.trim(),
       coverImage: coverImageBytes,
     );
   }
@@ -134,13 +134,13 @@ class BooksRepositoryImpl implements BooksRepository {
     await _booksDao.insertBook(
       BooksCompanion(
         category: Value(
-          category.category,
+          category.category.trim(),
         ),
         title: Value(
-          title,
+          title.trim(),
         ),
         author: Value(
-          author,
+          author.trim(),
         ),
         description: Value(
           description,
@@ -167,7 +167,7 @@ class BooksRepositoryImpl implements BooksRepository {
 
     final categoryModels = categories.map(
       (category) => CategoryModel(
-        category: category.title,
+        category: category.title.trim(),
       ),
     );
 
@@ -178,7 +178,7 @@ class BooksRepositoryImpl implements BooksRepository {
   Future<void> insertCategory(CategoryModel categoryModel) =>
       _categoriesDao.insertCategory(
         Category(
-          title: categoryModel.category,
+          title: categoryModel.category.trim(),
         ),
       );
 
@@ -204,7 +204,7 @@ class BooksRepositoryImpl implements BooksRepository {
   Future<List<BookModel>> getBookFromSameAuthor({
     required String author,
   }) async {
-    final books = await _booksDao.getBooksByAuthor(author);
+    final books = await _booksDao.getBooksByAuthor(author.trim());
 
     return await bookEntitiesToBookModels(books);
   }

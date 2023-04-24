@@ -575,61 +575,108 @@ mixin _$BookDetailPageState {
   BookModel? get book => throw _privateConstructorUsedError;
   List<BookModel> get anotherBooksFromSameAuthor =>
       throw _privateConstructorUsedError;
+  List<BookModel> get booksWithSameCategory =>
+      throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         idle,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         processing,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successful,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successfullyDeleted,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
     required TResult orElse(),
   }) =>
@@ -680,6 +727,7 @@ abstract class $BookDetailPageStateCopyWith<$Res> {
   $Res call(
       {BookModel? book,
       List<BookModel> anotherBooksFromSameAuthor,
+      List<BookModel> booksWithSameCategory,
       String message});
 
   $BookModelCopyWith<$Res>? get book;
@@ -700,6 +748,7 @@ class _$BookDetailPageStateCopyWithImpl<$Res, $Val extends BookDetailPageState>
   $Res call({
     Object? book = freezed,
     Object? anotherBooksFromSameAuthor = null,
+    Object? booksWithSameCategory = null,
     Object? message = null,
   }) {
     return _then(_value.copyWith(
@@ -710,6 +759,10 @@ class _$BookDetailPageStateCopyWithImpl<$Res, $Val extends BookDetailPageState>
       anotherBooksFromSameAuthor: null == anotherBooksFromSameAuthor
           ? _value.anotherBooksFromSameAuthor
           : anotherBooksFromSameAuthor // ignore: cast_nullable_to_non_nullable
+              as List<BookModel>,
+      booksWithSameCategory: null == booksWithSameCategory
+          ? _value.booksWithSameCategory
+          : booksWithSameCategory // ignore: cast_nullable_to_non_nullable
               as List<BookModel>,
       message: null == message
           ? _value.message
@@ -742,6 +795,7 @@ abstract class _$$IdleBookDetailPageStateCopyWith<$Res>
   $Res call(
       {BookModel? book,
       List<BookModel> anotherBooksFromSameAuthor,
+      List<BookModel> booksWithSameCategory,
       String message});
 
   @override
@@ -761,6 +815,7 @@ class __$$IdleBookDetailPageStateCopyWithImpl<$Res>
   $Res call({
     Object? book = freezed,
     Object? anotherBooksFromSameAuthor = null,
+    Object? booksWithSameCategory = null,
     Object? message = null,
   }) {
     return _then(_$IdleBookDetailPageState(
@@ -771,6 +826,10 @@ class __$$IdleBookDetailPageStateCopyWithImpl<$Res>
       anotherBooksFromSameAuthor: null == anotherBooksFromSameAuthor
           ? _value._anotherBooksFromSameAuthor
           : anotherBooksFromSameAuthor // ignore: cast_nullable_to_non_nullable
+              as List<BookModel>,
+      booksWithSameCategory: null == booksWithSameCategory
+          ? _value._booksWithSameCategory
+          : booksWithSameCategory // ignore: cast_nullable_to_non_nullable
               as List<BookModel>,
       message: null == message
           ? _value.message
@@ -786,8 +845,10 @@ class _$IdleBookDetailPageState extends IdleBookDetailPageState {
   const _$IdleBookDetailPageState(
       {this.book = null,
       final List<BookModel> anotherBooksFromSameAuthor = const [],
+      final List<BookModel> booksWithSameCategory = const [],
       this.message = 'Idle'})
       : _anotherBooksFromSameAuthor = anotherBooksFromSameAuthor,
+        _booksWithSameCategory = booksWithSameCategory,
         super._();
 
   @override
@@ -803,13 +864,23 @@ class _$IdleBookDetailPageState extends IdleBookDetailPageState {
     return EqualUnmodifiableListView(_anotherBooksFromSameAuthor);
   }
 
+  final List<BookModel> _booksWithSameCategory;
+  @override
+  @JsonKey()
+  List<BookModel> get booksWithSameCategory {
+    if (_booksWithSameCategory is EqualUnmodifiableListView)
+      return _booksWithSameCategory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_booksWithSameCategory);
+  }
+
   @override
   @JsonKey()
   final String message;
 
   @override
   String toString() {
-    return 'BookDetailPageState.idle(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, message: $message)';
+    return 'BookDetailPageState.idle(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, booksWithSameCategory: $booksWithSameCategory, message: $message)';
   }
 
   @override
@@ -821,6 +892,8 @@ class _$IdleBookDetailPageState extends IdleBookDetailPageState {
             const DeepCollectionEquality().equals(
                 other._anotherBooksFromSameAuthor,
                 _anotherBooksFromSameAuthor) &&
+            const DeepCollectionEquality()
+                .equals(other._booksWithSameCategory, _booksWithSameCategory) &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -829,6 +902,7 @@ class _$IdleBookDetailPageState extends IdleBookDetailPageState {
       runtimeType,
       book,
       const DeepCollectionEquality().hash(_anotherBooksFromSameAuthor),
+      const DeepCollectionEquality().hash(_booksWithSameCategory),
       message);
 
   @JsonKey(ignore: true)
@@ -841,69 +915,117 @@ class _$IdleBookDetailPageState extends IdleBookDetailPageState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         idle,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         processing,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successful,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successfullyDeleted,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         error,
   }) {
-    return idle(book, anotherBooksFromSameAuthor, message);
+    return idle(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
   }) {
-    return idle?.call(book, anotherBooksFromSameAuthor, message);
+    return idle?.call(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
     required TResult orElse(),
   }) {
     if (idle != null) {
-      return idle(book, anotherBooksFromSameAuthor, message);
+      return idle(
+          book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
     }
     return orElse();
   }
@@ -956,6 +1078,7 @@ abstract class IdleBookDetailPageState extends BookDetailPageState {
   const factory IdleBookDetailPageState(
       {final BookModel? book,
       final List<BookModel> anotherBooksFromSameAuthor,
+      final List<BookModel> booksWithSameCategory,
       final String message}) = _$IdleBookDetailPageState;
   const IdleBookDetailPageState._() : super._();
 
@@ -963,6 +1086,8 @@ abstract class IdleBookDetailPageState extends BookDetailPageState {
   BookModel? get book;
   @override
   List<BookModel> get anotherBooksFromSameAuthor;
+  @override
+  List<BookModel> get booksWithSameCategory;
   @override
   String get message;
   @override
@@ -983,6 +1108,7 @@ abstract class _$$ProcessingBookDetailPageStateCopyWith<$Res>
   $Res call(
       {BookModel? book,
       List<BookModel> anotherBooksFromSameAuthor,
+      List<BookModel> booksWithSameCategory,
       String message});
 
   @override
@@ -1004,6 +1130,7 @@ class __$$ProcessingBookDetailPageStateCopyWithImpl<$Res>
   $Res call({
     Object? book = freezed,
     Object? anotherBooksFromSameAuthor = null,
+    Object? booksWithSameCategory = null,
     Object? message = null,
   }) {
     return _then(_$ProcessingBookDetailPageState(
@@ -1014,6 +1141,10 @@ class __$$ProcessingBookDetailPageStateCopyWithImpl<$Res>
       anotherBooksFromSameAuthor: null == anotherBooksFromSameAuthor
           ? _value._anotherBooksFromSameAuthor
           : anotherBooksFromSameAuthor // ignore: cast_nullable_to_non_nullable
+              as List<BookModel>,
+      booksWithSameCategory: null == booksWithSameCategory
+          ? _value._booksWithSameCategory
+          : booksWithSameCategory // ignore: cast_nullable_to_non_nullable
               as List<BookModel>,
       message: null == message
           ? _value.message
@@ -1029,8 +1160,10 @@ class _$ProcessingBookDetailPageState extends ProcessingBookDetailPageState {
   const _$ProcessingBookDetailPageState(
       {required this.book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       this.message = 'Processing'})
       : _anotherBooksFromSameAuthor = anotherBooksFromSameAuthor,
+        _booksWithSameCategory = booksWithSameCategory,
         super._();
 
   @override
@@ -1044,13 +1177,22 @@ class _$ProcessingBookDetailPageState extends ProcessingBookDetailPageState {
     return EqualUnmodifiableListView(_anotherBooksFromSameAuthor);
   }
 
+  final List<BookModel> _booksWithSameCategory;
+  @override
+  List<BookModel> get booksWithSameCategory {
+    if (_booksWithSameCategory is EqualUnmodifiableListView)
+      return _booksWithSameCategory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_booksWithSameCategory);
+  }
+
   @override
   @JsonKey()
   final String message;
 
   @override
   String toString() {
-    return 'BookDetailPageState.processing(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, message: $message)';
+    return 'BookDetailPageState.processing(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, booksWithSameCategory: $booksWithSameCategory, message: $message)';
   }
 
   @override
@@ -1062,6 +1204,8 @@ class _$ProcessingBookDetailPageState extends ProcessingBookDetailPageState {
             const DeepCollectionEquality().equals(
                 other._anotherBooksFromSameAuthor,
                 _anotherBooksFromSameAuthor) &&
+            const DeepCollectionEquality()
+                .equals(other._booksWithSameCategory, _booksWithSameCategory) &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1070,6 +1214,7 @@ class _$ProcessingBookDetailPageState extends ProcessingBookDetailPageState {
       runtimeType,
       book,
       const DeepCollectionEquality().hash(_anotherBooksFromSameAuthor),
+      const DeepCollectionEquality().hash(_booksWithSameCategory),
       message);
 
   @JsonKey(ignore: true)
@@ -1082,69 +1227,117 @@ class _$ProcessingBookDetailPageState extends ProcessingBookDetailPageState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         idle,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         processing,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successful,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successfullyDeleted,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         error,
   }) {
-    return processing(book, anotherBooksFromSameAuthor, message);
+    return processing(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
   }) {
-    return processing?.call(book, anotherBooksFromSameAuthor, message);
+    return processing?.call(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
     required TResult orElse(),
   }) {
     if (processing != null) {
-      return processing(book, anotherBooksFromSameAuthor, message);
+      return processing(
+          book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
     }
     return orElse();
   }
@@ -1197,6 +1390,7 @@ abstract class ProcessingBookDetailPageState extends BookDetailPageState {
   const factory ProcessingBookDetailPageState(
       {required final BookModel? book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       final String message}) = _$ProcessingBookDetailPageState;
   const ProcessingBookDetailPageState._() : super._();
 
@@ -1204,6 +1398,8 @@ abstract class ProcessingBookDetailPageState extends BookDetailPageState {
   BookModel? get book;
   @override
   List<BookModel> get anotherBooksFromSameAuthor;
+  @override
+  List<BookModel> get booksWithSameCategory;
   @override
   String get message;
   @override
@@ -1224,6 +1420,7 @@ abstract class _$$SuccessfulBookDetailPageStateCopyWith<$Res>
   $Res call(
       {BookModel? book,
       List<BookModel> anotherBooksFromSameAuthor,
+      List<BookModel> booksWithSameCategory,
       String message});
 
   @override
@@ -1245,6 +1442,7 @@ class __$$SuccessfulBookDetailPageStateCopyWithImpl<$Res>
   $Res call({
     Object? book = freezed,
     Object? anotherBooksFromSameAuthor = null,
+    Object? booksWithSameCategory = null,
     Object? message = null,
   }) {
     return _then(_$SuccessfulBookDetailPageState(
@@ -1255,6 +1453,10 @@ class __$$SuccessfulBookDetailPageStateCopyWithImpl<$Res>
       anotherBooksFromSameAuthor: null == anotherBooksFromSameAuthor
           ? _value._anotherBooksFromSameAuthor
           : anotherBooksFromSameAuthor // ignore: cast_nullable_to_non_nullable
+              as List<BookModel>,
+      booksWithSameCategory: null == booksWithSameCategory
+          ? _value._booksWithSameCategory
+          : booksWithSameCategory // ignore: cast_nullable_to_non_nullable
               as List<BookModel>,
       message: null == message
           ? _value.message
@@ -1270,8 +1472,10 @@ class _$SuccessfulBookDetailPageState extends SuccessfulBookDetailPageState {
   const _$SuccessfulBookDetailPageState(
       {required this.book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       this.message = 'Successful'})
       : _anotherBooksFromSameAuthor = anotherBooksFromSameAuthor,
+        _booksWithSameCategory = booksWithSameCategory,
         super._();
 
   @override
@@ -1285,13 +1489,22 @@ class _$SuccessfulBookDetailPageState extends SuccessfulBookDetailPageState {
     return EqualUnmodifiableListView(_anotherBooksFromSameAuthor);
   }
 
+  final List<BookModel> _booksWithSameCategory;
+  @override
+  List<BookModel> get booksWithSameCategory {
+    if (_booksWithSameCategory is EqualUnmodifiableListView)
+      return _booksWithSameCategory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_booksWithSameCategory);
+  }
+
   @override
   @JsonKey()
   final String message;
 
   @override
   String toString() {
-    return 'BookDetailPageState.successful(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, message: $message)';
+    return 'BookDetailPageState.successful(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, booksWithSameCategory: $booksWithSameCategory, message: $message)';
   }
 
   @override
@@ -1303,6 +1516,8 @@ class _$SuccessfulBookDetailPageState extends SuccessfulBookDetailPageState {
             const DeepCollectionEquality().equals(
                 other._anotherBooksFromSameAuthor,
                 _anotherBooksFromSameAuthor) &&
+            const DeepCollectionEquality()
+                .equals(other._booksWithSameCategory, _booksWithSameCategory) &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1311,6 +1526,7 @@ class _$SuccessfulBookDetailPageState extends SuccessfulBookDetailPageState {
       runtimeType,
       book,
       const DeepCollectionEquality().hash(_anotherBooksFromSameAuthor),
+      const DeepCollectionEquality().hash(_booksWithSameCategory),
       message);
 
   @JsonKey(ignore: true)
@@ -1323,69 +1539,117 @@ class _$SuccessfulBookDetailPageState extends SuccessfulBookDetailPageState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         idle,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         processing,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successful,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successfullyDeleted,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         error,
   }) {
-    return successful(book, anotherBooksFromSameAuthor, message);
+    return successful(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
   }) {
-    return successful?.call(book, anotherBooksFromSameAuthor, message);
+    return successful?.call(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful(book, anotherBooksFromSameAuthor, message);
+      return successful(
+          book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
     }
     return orElse();
   }
@@ -1438,6 +1702,7 @@ abstract class SuccessfulBookDetailPageState extends BookDetailPageState {
   const factory SuccessfulBookDetailPageState(
       {required final BookModel? book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       final String message}) = _$SuccessfulBookDetailPageState;
   const SuccessfulBookDetailPageState._() : super._();
 
@@ -1445,6 +1710,8 @@ abstract class SuccessfulBookDetailPageState extends BookDetailPageState {
   BookModel? get book;
   @override
   List<BookModel> get anotherBooksFromSameAuthor;
+  @override
+  List<BookModel> get booksWithSameCategory;
   @override
   String get message;
   @override
@@ -1465,6 +1732,7 @@ abstract class _$$SuccessfullyDeletedBookDetailPageStateCopyWith<$Res>
   $Res call(
       {BookModel? book,
       List<BookModel> anotherBooksFromSameAuthor,
+      List<BookModel> booksWithSameCategory,
       String message});
 
   @override
@@ -1486,6 +1754,7 @@ class __$$SuccessfullyDeletedBookDetailPageStateCopyWithImpl<$Res>
   $Res call({
     Object? book = freezed,
     Object? anotherBooksFromSameAuthor = null,
+    Object? booksWithSameCategory = null,
     Object? message = null,
   }) {
     return _then(_$SuccessfullyDeletedBookDetailPageState(
@@ -1496,6 +1765,10 @@ class __$$SuccessfullyDeletedBookDetailPageStateCopyWithImpl<$Res>
       anotherBooksFromSameAuthor: null == anotherBooksFromSameAuthor
           ? _value._anotherBooksFromSameAuthor
           : anotherBooksFromSameAuthor // ignore: cast_nullable_to_non_nullable
+              as List<BookModel>,
+      booksWithSameCategory: null == booksWithSameCategory
+          ? _value._booksWithSameCategory
+          : booksWithSameCategory // ignore: cast_nullable_to_non_nullable
               as List<BookModel>,
       message: null == message
           ? _value.message
@@ -1512,8 +1785,10 @@ class _$SuccessfullyDeletedBookDetailPageState
   const _$SuccessfullyDeletedBookDetailPageState(
       {required this.book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       this.message = 'Successful'})
       : _anotherBooksFromSameAuthor = anotherBooksFromSameAuthor,
+        _booksWithSameCategory = booksWithSameCategory,
         super._();
 
   @override
@@ -1527,13 +1802,22 @@ class _$SuccessfullyDeletedBookDetailPageState
     return EqualUnmodifiableListView(_anotherBooksFromSameAuthor);
   }
 
+  final List<BookModel> _booksWithSameCategory;
+  @override
+  List<BookModel> get booksWithSameCategory {
+    if (_booksWithSameCategory is EqualUnmodifiableListView)
+      return _booksWithSameCategory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_booksWithSameCategory);
+  }
+
   @override
   @JsonKey()
   final String message;
 
   @override
   String toString() {
-    return 'BookDetailPageState.successfullyDeleted(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, message: $message)';
+    return 'BookDetailPageState.successfullyDeleted(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, booksWithSameCategory: $booksWithSameCategory, message: $message)';
   }
 
   @override
@@ -1545,6 +1829,8 @@ class _$SuccessfullyDeletedBookDetailPageState
             const DeepCollectionEquality().equals(
                 other._anotherBooksFromSameAuthor,
                 _anotherBooksFromSameAuthor) &&
+            const DeepCollectionEquality()
+                .equals(other._booksWithSameCategory, _booksWithSameCategory) &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1553,6 +1839,7 @@ class _$SuccessfullyDeletedBookDetailPageState
       runtimeType,
       book,
       const DeepCollectionEquality().hash(_anotherBooksFromSameAuthor),
+      const DeepCollectionEquality().hash(_booksWithSameCategory),
       message);
 
   @JsonKey(ignore: true)
@@ -1566,69 +1853,117 @@ class _$SuccessfullyDeletedBookDetailPageState
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         idle,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         processing,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successful,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successfullyDeleted,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         error,
   }) {
-    return successfullyDeleted(book, anotherBooksFromSameAuthor, message);
+    return successfullyDeleted(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
   }) {
-    return successfullyDeleted?.call(book, anotherBooksFromSameAuthor, message);
+    return successfullyDeleted?.call(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
     required TResult orElse(),
   }) {
     if (successfullyDeleted != null) {
-      return successfullyDeleted(book, anotherBooksFromSameAuthor, message);
+      return successfullyDeleted(
+          book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
     }
     return orElse();
   }
@@ -1682,6 +2017,7 @@ abstract class SuccessfullyDeletedBookDetailPageState
   const factory SuccessfullyDeletedBookDetailPageState(
       {required final BookModel? book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       final String message}) = _$SuccessfullyDeletedBookDetailPageState;
   const SuccessfullyDeletedBookDetailPageState._() : super._();
 
@@ -1689,6 +2025,8 @@ abstract class SuccessfullyDeletedBookDetailPageState
   BookModel? get book;
   @override
   List<BookModel> get anotherBooksFromSameAuthor;
+  @override
+  List<BookModel> get booksWithSameCategory;
   @override
   String get message;
   @override
@@ -1709,6 +2047,7 @@ abstract class _$$ErrorBookDetailPageStateCopyWith<$Res>
   $Res call(
       {BookModel? book,
       List<BookModel> anotherBooksFromSameAuthor,
+      List<BookModel> booksWithSameCategory,
       String message});
 
   @override
@@ -1728,6 +2067,7 @@ class __$$ErrorBookDetailPageStateCopyWithImpl<$Res>
   $Res call({
     Object? book = freezed,
     Object? anotherBooksFromSameAuthor = null,
+    Object? booksWithSameCategory = null,
     Object? message = null,
   }) {
     return _then(_$ErrorBookDetailPageState(
@@ -1738,6 +2078,10 @@ class __$$ErrorBookDetailPageStateCopyWithImpl<$Res>
       anotherBooksFromSameAuthor: null == anotherBooksFromSameAuthor
           ? _value._anotherBooksFromSameAuthor
           : anotherBooksFromSameAuthor // ignore: cast_nullable_to_non_nullable
+              as List<BookModel>,
+      booksWithSameCategory: null == booksWithSameCategory
+          ? _value._booksWithSameCategory
+          : booksWithSameCategory // ignore: cast_nullable_to_non_nullable
               as List<BookModel>,
       message: null == message
           ? _value.message
@@ -1753,8 +2097,10 @@ class _$ErrorBookDetailPageState extends ErrorBookDetailPageState {
   const _$ErrorBookDetailPageState(
       {required this.book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       this.message = 'Error'})
       : _anotherBooksFromSameAuthor = anotherBooksFromSameAuthor,
+        _booksWithSameCategory = booksWithSameCategory,
         super._();
 
   @override
@@ -1768,13 +2114,22 @@ class _$ErrorBookDetailPageState extends ErrorBookDetailPageState {
     return EqualUnmodifiableListView(_anotherBooksFromSameAuthor);
   }
 
+  final List<BookModel> _booksWithSameCategory;
+  @override
+  List<BookModel> get booksWithSameCategory {
+    if (_booksWithSameCategory is EqualUnmodifiableListView)
+      return _booksWithSameCategory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_booksWithSameCategory);
+  }
+
   @override
   @JsonKey()
   final String message;
 
   @override
   String toString() {
-    return 'BookDetailPageState.error(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, message: $message)';
+    return 'BookDetailPageState.error(book: $book, anotherBooksFromSameAuthor: $anotherBooksFromSameAuthor, booksWithSameCategory: $booksWithSameCategory, message: $message)';
   }
 
   @override
@@ -1786,6 +2141,8 @@ class _$ErrorBookDetailPageState extends ErrorBookDetailPageState {
             const DeepCollectionEquality().equals(
                 other._anotherBooksFromSameAuthor,
                 _anotherBooksFromSameAuthor) &&
+            const DeepCollectionEquality()
+                .equals(other._booksWithSameCategory, _booksWithSameCategory) &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1794,6 +2151,7 @@ class _$ErrorBookDetailPageState extends ErrorBookDetailPageState {
       runtimeType,
       book,
       const DeepCollectionEquality().hash(_anotherBooksFromSameAuthor),
+      const DeepCollectionEquality().hash(_booksWithSameCategory),
       message);
 
   @JsonKey(ignore: true)
@@ -1807,69 +2165,117 @@ class _$ErrorBookDetailPageState extends ErrorBookDetailPageState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         idle,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         processing,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successful,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         successfullyDeleted,
-    required TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)
+    required TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)
         error,
   }) {
-    return error(book, anotherBooksFromSameAuthor, message);
+    return error(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult? Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult? Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
   }) {
-    return error?.call(book, anotherBooksFromSameAuthor, message);
+    return error?.call(
+        book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         idle,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         processing,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successful,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         successfullyDeleted,
-    TResult Function(BookModel? book,
-            List<BookModel> anotherBooksFromSameAuthor, String message)?
+    TResult Function(
+            BookModel? book,
+            List<BookModel> anotherBooksFromSameAuthor,
+            List<BookModel> booksWithSameCategory,
+            String message)?
         error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(book, anotherBooksFromSameAuthor, message);
+      return error(
+          book, anotherBooksFromSameAuthor, booksWithSameCategory, message);
     }
     return orElse();
   }
@@ -1922,6 +2328,7 @@ abstract class ErrorBookDetailPageState extends BookDetailPageState {
   const factory ErrorBookDetailPageState(
       {required final BookModel? book,
       required final List<BookModel> anotherBooksFromSameAuthor,
+      required final List<BookModel> booksWithSameCategory,
       final String message}) = _$ErrorBookDetailPageState;
   const ErrorBookDetailPageState._() : super._();
 
@@ -1929,6 +2336,8 @@ abstract class ErrorBookDetailPageState extends BookDetailPageState {
   BookModel? get book;
   @override
   List<BookModel> get anotherBooksFromSameAuthor;
+  @override
+  List<BookModel> get booksWithSameCategory;
   @override
   String get message;
   @override
