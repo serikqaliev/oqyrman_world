@@ -55,8 +55,9 @@ class _AddPdfButtonState extends State<AddPdfButton> {
                 ),
               ),
               backgroundColor:
-                  pdf == null ? Colors.transparent : Color(0xFF698809),
-              foregroundColor: pdf == null ? Color(0xFF698809) : Colors.white,
+                  pdf == null ? Colors.transparent : const Color(0xFF698809),
+              foregroundColor:
+                  pdf == null ? const Color(0xFF698809) : Colors.white,
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,

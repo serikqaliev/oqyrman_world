@@ -59,17 +59,17 @@ class _ReadBookPageBodyState extends State<_ReadBookPageBody> {
             swipeHorizontal: true,
             autoSpacing: false,
             pageFling: false,
-            onRender: (_pages) {
+            onRender: (pages) {
               setState(() {
-                pages = _pages;
+                pages = pages;
                 isReady = true;
               });
             },
             onError: (error) {
-              print(error.toString());
+              debugPrint(error.toString());
             },
             onPageError: (page, error) {
-              print('$page: ${error.toString()}');
+              debugPrint('$page: ${error.toString()}');
             },
             onViewCreated: (PDFViewController pdfViewController) {
               _controller.complete(pdfViewController);
@@ -78,7 +78,7 @@ class _ReadBookPageBodyState extends State<_ReadBookPageBody> {
               setState(() {
                 currentPage = page;
               });
-              print('page change: $page/$total');
+              debugPrint('page change: $page/$total');
             },
           ),
         ),

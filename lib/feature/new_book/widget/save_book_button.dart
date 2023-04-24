@@ -16,7 +16,7 @@ class SaveBookButton extends StatelessWidget {
       },
       builder: (context, canSave) {
         return FloatingActionButton(
-          backgroundColor: canSave ? Color(0xFF698809) : Colors.grey,
+          backgroundColor: canSave ? const Color(0xFF698809) : Colors.grey,
           onPressed: () {
             context.read<NewBookBloc>().add(
                   const NewBookEvent.save(),

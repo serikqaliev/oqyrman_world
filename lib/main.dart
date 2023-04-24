@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                 return state.isDarkTheme;
               },
               builder: (context, isDarkTheme) {
-                print(isDarkTheme);
+                debugPrint(isDarkTheme.toString());
                 return MaterialApp(
                   title: 'Oqyrman World',
                   theme: ThemeData.light(),

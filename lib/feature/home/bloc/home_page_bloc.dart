@@ -9,6 +9,28 @@ part 'home_page_event.dart';
 part 'home_page_state.dart';
 part 'home_page_bloc.freezed.dart';
 
+/// Этот код представляет собой реализацию класса `HomePageBloc`,
+/// который является частью архитектуры BLoC и используется для управления
+/// состоянием домашней страницы в приложении.
+
+/// `HomePageBloc` наследует от класса `Bloc` и реализует обобщенные типы `HomePageEvent`
+/// и `HomePageState`. Он также использует `SetStateMixin` для упрощения обновления состояния.
+
+/// Внутри `HomePageBloc` определены три метода: `_started`, `_bookAdded` и `_addToFavorites`.
+/// Метод `_started` вызывается при запуске домашней страницы, чтобы загрузить данные с сервера,
+/// а методы `_bookAdded` и `_addToFavorites` вызываются при добавлении книги и добавлении
+/// в избранное соответственно.
+
+/// Методы `_started`, `_bookAdded` и `_addToFavorites` вызываются при выполнении
+/// соответствующих событий в `on` методе. Этот метод используется для определения,
+/// какой метод должен быть вызван на основе типа события.
+
+/// В методах `_started`, `_bookAdded` и `_addToFavorites` сначала устанавливается состояние `processing`,
+/// а затем происходит загрузка данных с сервера и обновление состояния `idle`.
+
+/// Таким образом, `HomePageBloc` предоставляет механизм для управления состоянием домашней страницы,
+/// что помогает разработчикам легче разделять код и делает приложение более устойчивым к ошибкам.
+
 class HomePageBloc extends Bloc<HomePageEvent, HomePageState>
     with SetStateMixin<HomePageState> {
   final BooksRepository _booksRepository;

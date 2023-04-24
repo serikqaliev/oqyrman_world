@@ -2,10 +2,27 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pdf_render/pdf_render.dart';
 
 import '../../book_details/model/book_model.dart';
+
+/// Данный код представляет собой реализацию пользовательского интерфейса в приложении на Flutter,
+/// позволяющего отображать список книг с обложками, заголовками и другой информацией.
+
+/// Компонент BooksVerticalList - это стейтлесс-виджет, который отображает список книг.
+/// Внутри него есть компонент ListView.separated, который отображает карточки книг
+/// с помощью компонента BookCard.
+
+/// Компонент BookCard - это стейтлесс-виджет, который отображает одну карточку книги.
+/// В нем есть функция getImageFromPdf, которая извлекает обложку книги из PDF-файла, и отображает ее
+/// в виде изображения. Для этого используется библиотека pdf_render. Компонент также содержит информацию о книге,
+/// такую как заголовок, автор и описание.
+
+/// Компонент _TitleAndAuthor - это приватный стейтлесс-виджет, который отображает заголовок и автора книги
+/// в компоненте BookCard.
+
+/// Компоненты BooksVerticalList, BookCard и _TitleAndAuthor являются составляющими пользовательского интерфейса,
+/// который может использоваться для отображения списка книг с дополнительной информацией о них.
 
 class BooksVerticalList extends StatelessWidget {
   const BooksVerticalList({

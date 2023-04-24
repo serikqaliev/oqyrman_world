@@ -178,7 +178,6 @@ class BooksRepositoryImpl implements BooksRepository {
 
   @override
   Future<void> updateBookDetails(BookModel bookModel) {
-    // TODO: implement updateBookDetails
     throw UnimplementedError();
   }
 

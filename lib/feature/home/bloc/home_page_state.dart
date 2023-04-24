@@ -1,6 +1,22 @@
 part of 'home_page_bloc.dart';
 
-/* HomePage States */
+/// Это файл с объявлением состояний (states) для класса `HomePageBloc`.
+/// Он содержит объявление четырех различных состояний, которые могут возникнуть
+/// в процессе работы данного блока:
+/// - `IdleHomePageState` - состояние простоя, когда нет активных операций;
+/// - `ProcessingHomePageState` - состояние обработки, когда выполняются какие-то действия;
+/// - `SuccessfulHomePageState` - успешное состояние, когда все операции завершились успешно;
+/// - `ErrorHomePageState` - состояние ошибки, когда произошла какая-то ошибка.
+
+/// Каждое состояние содержит список последних открытых книг `lastOpenedBooks`,
+/// список категорий `categories` и список всех книг `allBooks`. В состояниях `ProcessingHomePageState`,
+/// `SuccessfulHomePageState` и `ErrorHomePageState` также есть сообщение `message`,
+/// которое содержит информацию о том, что произошло.
+
+/// Класс `HomePageState` также содержит некоторые методы и свойства,
+/// такие как `booksIsEmpty`, `lastOpenedBooksEmpty`, `hasError`, `isIdling` и `isProcessing`,
+/// которые позволяют получить информацию о текущем состоянии блока. Например, `booksIsEmpty`
+/// возвращает true, если список всех книг пустой, и false в противном случае.
 
 @freezed
 class HomePageState with _$HomePageState {
