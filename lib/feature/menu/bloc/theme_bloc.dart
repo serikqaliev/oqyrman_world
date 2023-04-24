@@ -7,6 +7,32 @@ part 'theme_event.dart';
 part 'theme_state.dart';
 part 'theme_bloc.freezed.dart';
 
+/// Данный код представляет собой реализацию блока (BLoC) в пакете Flutter для управления темой приложения.
+
+/// Класс `ThemeBloc` наследует от `Bloc<ThemeEvent, ThemeState>` и включает в себя миксин
+/// `SetStateMixin<ThemeState>`.
+
+/// `Bloc` - это шаблон для управления состоянием приложения, который получает события (event),
+/// обрабатывает их и выдает состояния (state).
+
+/// `SetStateMixin` - это миксин, который обеспечивает возможность изменения состояния блока
+/// при помощи функции `setState`.
+
+/// `ThemeBloc` принимает в конструкторе экземпляр `ThemeRepository`, который отвечает
+/// за сохранение и загрузку темы приложения.
+
+/// `on<ThemeEvent>` обрабатывает события блока, такие как `changeTheme` и `started`.
+/// При получении события `changeTheme`, блок вызывает функцию `changeTheme()` из `ThemeRepository`,
+/// чтобы изменить тему приложения, а затем получает текущее состояние темы и обновляет состояние блока
+/// при помощи функции `setState`.
+
+/// При получении события `started`, блок получает текущее состояние темы и устанавливает его
+/// при помощи функции `setState`.
+
+/// Код использует библиотеку `freezed_annotation`, чтобы создать классы суммарных типов (sum types)
+/// `ThemeEvent` и `ThemeState`, которые описывают все возможные события и состояния,
+/// которые могут быть использованы в блоке, и сгенерировать соответствующий код.
+
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState>
     with SetStateMixin<ThemeState> {
   final ThemeRepository _themeRepository;

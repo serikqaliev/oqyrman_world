@@ -1,11 +1,34 @@
-import 'package:books_app/feature/home/widget/books_vertical_list.dart';
 import 'package:books_app/feature/menu/bloc/menu_bloc.dart';
+import 'package:books_app/feature/menu/widget/favorites_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../book_details/book_details_page.dart';
-import '../home/bloc/home_page_bloc.dart';
 import 'bloc/theme_bloc.dart';
+
+/// В данном файле описывается страница меню (MenuPage),
+/// которая содержит два виджета: FavoritesTile и ListTile.
+
+/// FavoritesTile представляет собой кастомный виджет, который, вероятно,
+/// отображает избранные элементы.
+
+/// ListTile - это виджет списка, который содержит иконку (Icon),
+/// переключатель (Switch) и текстовое поле (Text), которые предназначены
+/// для управления темой приложения (светлая или темная тема).
+
+/// В начале кода подключаются библиотеки (import) для работы с различными функциями и виджетами,
+/// которые используются в коде.
+
+/// Внутри класса MenuPage определен метод build, который возвращает Scaffold,
+/// содержащий AppBar и _MenuPageBody.
+
+/// Внутри класса _MenuPageBody определен метод build, который возвращает Column,
+/// содержащий FavoritesTile и ListTile.
+
+/// Внутри ListTile используется BlocSelector, который позволяет подписаться
+/// на состояние ThemeBloc и получить информацию о том, какая тема в настоящее время выбрана.
+
+/// Если пользователь переключает переключатель, вызывается метод onChanged,
+/// который в свою очередь отправляет событие ThemeEvent.changeTheme в ThemeBloc.
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -19,7 +42,7 @@ class MenuPage extends StatelessWidget {
           title: const Text(
             'Баптаулар',
           ),
-          backgroundColor: Color(0xFF698809),
+          backgroundColor: const Color(0xFF698809),
           centerTitle: true,
         ),
         body: const _MenuPageBody(),
@@ -62,104 +85,8 @@ class _MenuPageBody extends StatelessWidget {
           title: const Text(
             'Қараңғы режимі',
           ),
-          onTap: () {
-            Navigator.of(context).pushNamed('/books');
-          },
         ),
       ],
-    );
-  }
-}
-
-class FavoritesTile extends StatefulWidget {
-  const FavoritesTile({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<FavoritesTile> createState() => _FavoritesTileState();
-}
-
-class _FavoritesTileState extends State<FavoritesTile> {
-  void showFavorites() {
-    showModalBottomSheet(
-      context: context,
-      builder: (_) => BlocProvider.value(
-        value: context.read<MenuBloc>(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 16,
-          ),
-          child: Column(
-            children: [
-              Expanded(
-                child: BlocBuilder<MenuBloc, MenuState>(
-                  builder: (context, state) {
-                    return BooksVerticalList(
-                      title: 'Сіз ұнатқан кітаптар',
-                      books: state.favoriteBooks,
-                      onChooseBook: (book) {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => BlocProvider.value(
-                              value: context.read<MenuBloc>(),
-                              child: BookDetailsPage(
-                                bookModel: book,
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                      onAddToFavorites: (book) {
-                        context.read<MenuBloc>().add(
-                              MenuEvent.changeFavorite(book: book),
-                            );
-
-                        context.read<HomePageBloc>().add(
-                              const HomePageEvent.bookAdded(),
-                            );
-                        if (state.favoriteBooks.length == 1) {
-                          Navigator.of(context).pop();
-                        }
-                      },
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: const Icon(
-        Icons.favorite,
-        color: Colors.red,
-      ),
-      minLeadingWidth: 24,
-      trailing: const Icon(
-        Icons.chevron_right,
-      ),
-      title: const Text(
-        'Ұнатқан кітаптар',
-      ),
-      onTap: () {
-        if (context.read<MenuBloc>().state.isFavoriteBooksNotEmpty) {
-          showFavorites();
-        } else {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text(
-                'Сіз ұнатқан кітаптар жоқ. Қосыңыз',
-              ),
-            ),
-          );
-        }
-      },
     );
   }
 }
