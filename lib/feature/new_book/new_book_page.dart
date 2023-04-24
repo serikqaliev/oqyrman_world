@@ -8,6 +8,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/new_book_bloc.dart';
 
+/// Этот код описывает страницу создания новой книги.
+
+/// Класс NewBookPage наследует от StatelessWidget и использует виджет BlocProvider
+/// для предоставления экземпляра NewBookBloc всем виджетам внутри себя.
+/// В теле Scaffold находятся AppBar, SingleChildScrollView, _NewBookPageBody и SaveBookButton.
+
+/// _NewBookPageBody наследует от StatefulWidget и содержит форму для создания новой книги.
+/// Он также использует виджет BlocListener для отслеживания состояния NewBookBloc
+/// и вывода сообщений об ошибках или успешном добавлении книги в базу данных.
+
+/// Класс SaveBookButton представляет кнопку, которая активируется только тогда,
+/// когда поля формы заполнены верно. Кнопка SaveBookButton использует виджет BlocSelector,
+/// чтобы получить состояние NewBookBloc и изменить цвет фона кнопки в зависимости от того,
+/// может ли новая книга быть сохранена в базу данных.
+
+/// В общем, этот код использует пакет flutter_bloc для реализации паттерна BLoC,
+/// который помогает разделить бизнес-логику и пользовательский интерфейс.
+
 class NewBookPage extends StatelessWidget {
   const NewBookPage({super.key});
 

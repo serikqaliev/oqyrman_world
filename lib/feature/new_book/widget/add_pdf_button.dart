@@ -6,6 +6,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/new_book_bloc.dart';
 
+/// Класс AddPdfButton представляет собой кнопку, при нажатии на которую пользователь может
+/// выбрать файл PDF с помощью библиотеки file_picker. После выбора файла, его путь передается
+/// в блок NewBookBloc с помощью события NewBookEvent.choosePdf.
+
+/// Внутри метода build() создается виджет ElevatedButton, который обернут в BlocSelector.
+/// Это позволяет получать состояние pdf из блока NewBookBloc и использовать его для определения
+/// внешнего вида кнопки. Если pdf == null, то кнопка отображает текст "Кітапты жүктеу"
+/// и иконку Icons.upload_file, иначе отображается название файла и иконка Icons.edit_document.
+
+/// Также важно отметить, что при нажатии на кнопку используется ключевое слово await,
+/// что позволяет программе ожидать завершения операции выбора файла.
+
 class AddPdfButton extends StatefulWidget {
   const AddPdfButton({
     Key? key,
