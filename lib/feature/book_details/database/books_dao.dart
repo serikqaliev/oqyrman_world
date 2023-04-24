@@ -6,6 +6,22 @@ import 'categories_table.dart';
 
 part 'books_dao.g.dart';
 
+/// Этот файл содержит определение класса [BooksDao],
+/// который является интерфейсом для доступа к таблице книг в базе данных приложения.
+
+/// Этот класс использует библиотеку [Drift] для генерации [SQL]-кода для выполнения запросов
+/// к базе данных. Конкретно, он определяет методы для выполнения различных запросов,
+/// таких как [getAllBooks()], [getBookById()], [insertBook()], [deleteBook()], [getFavoriteBooks()],
+/// [getLastOpenedBooks()] и т.д.
+
+/// Эти методы генерируют соответствующий [SQL]-код, используя таблицы [Books] и [Categories],
+/// которые были определены в файле [books_table.dart] и [categories_table.dart] соответственно.
+
+/// Класс [BooksDao] также аннотирован с помощью [@DriftAccessor] для генерации кода доступа
+/// к базе данных на основе таблиц, которые определены в tables аргументе. Код доступа
+/// к базе данных генерируется автоматически для этого класса и используется для выполнения
+/// запросов к базе данных.
+
 @DriftAccessor(tables: [Books, Categories])
 class BooksDao extends DatabaseAccessor<AppDatabase> with _$BooksDaoMixin {
   BooksDao(AppDatabase db) : super(db);

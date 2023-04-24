@@ -5,6 +5,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'book_model.freezed.dart';
 
+/// Этот код содержит определение неизменяемой модели книги ([BookModel])
+/// с помощью пакета [freezed_annotation]. Эта модель описывает свойства книги,
+/// такие как идентификатор, название, автор, описание, категория, является ли книга избранной,
+/// файл [PDF], обложка (в виде [Uint8List]), дата создания, дата обновления и дата последнего открытия.
+
 @Freezed(
   toJson: false,
   fromJson: false,

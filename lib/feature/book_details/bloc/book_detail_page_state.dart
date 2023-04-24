@@ -1,12 +1,25 @@
 part of 'book_detail_page_bloc.dart';
 
-/* BookDetailPage States */
+/// Этот код содержит определение состояния, используемого в блоке BookDetailPageBloc.
+/// Состояние описывает различные состояния, в которых может находиться страница
+/// детальной информации о книге.
+
+/// Каждое состояние определено как const фабрика в своей секции именованного объединения freezed.
+/// Состояния включают в себя idle (ожидание), processing (обработка), successful (успешно),
+/// successfullyDeleted (успешно удалено) и error (ошибка).
+
+/// Каждое состояние имеет свои поля, такие как book, anotherBooksFromSameAuthor, booksWithSameCategory
+/// и message, которые содержат информацию о книге, книгах других авторов, книгах в той же категории
+/// и сообщениях, которые могут использоваться для передачи пользовательского интерфейса.
+
+/// Кроме того, класс определяет несколько методов, которые могут быть использованы для проверки состояния
+/// блока, таких как hasData (проверка на наличие данных), hasError (проверка на наличие ошибки),
+/// isIdling (проверка на ожидание) и isProcessing (проверка на обработку).
 
 @freezed
 class BookDetailPageState with _$BookDetailPageState {
   const BookDetailPageState._();
 
-  /// Idling state
   const factory BookDetailPageState.idle({
     @Default(null) final BookModel? book,
     @Default([]) final List<BookModel> anotherBooksFromSameAuthor,
@@ -14,7 +27,6 @@ class BookDetailPageState with _$BookDetailPageState {
     @Default('Idle') final String message,
   }) = IdleBookDetailPageState;
 
-  /// Processing
   const factory BookDetailPageState.processing({
     required final BookModel? book,
     required final List<BookModel> anotherBooksFromSameAuthor,
@@ -22,7 +34,6 @@ class BookDetailPageState with _$BookDetailPageState {
     @Default('Processing') final String message,
   }) = ProcessingBookDetailPageState;
 
-  /// Successful
   const factory BookDetailPageState.successful({
     required final BookModel? book,
     required final List<BookModel> anotherBooksFromSameAuthor,
@@ -37,7 +48,6 @@ class BookDetailPageState with _$BookDetailPageState {
     @Default('Successful') final String message,
   }) = SuccessfullyDeletedBookDetailPageState;
 
-  /// An error has occurred
   const factory BookDetailPageState.error({
     required final BookModel? book,
     required final List<BookModel> anotherBooksFromSameAuthor,
@@ -45,19 +55,15 @@ class BookDetailPageState with _$BookDetailPageState {
     @Default('Error') final String message,
   }) = ErrorBookDetailPageState;
 
-  /// Has data
   bool get hasData => book != null;
 
-  /// If an error has occurred
   bool get hasError => maybeMap<bool>(
         orElse: () => false,
         error: (_) => true,
       );
 
-  /// Is in idle state
   bool get isIdling => !isProcessing;
 
-  /// Is in progress state
   bool get isProcessing => maybeMap<bool>(
         orElse: () => false,
         processing: (_) => true,

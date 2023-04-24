@@ -26,7 +26,9 @@ class NewBookPage extends StatelessWidget {
             'Жаңа кітап',
           ),
         ),
-        body: const _NewBookPageBody(),
+        body: const SingleChildScrollView(
+          child: _NewBookPageBody(),
+        ),
         floatingActionButton: const SaveBookButton(),
       ),
     );

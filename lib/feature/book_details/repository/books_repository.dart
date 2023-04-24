@@ -12,6 +12,27 @@ import 'package:uuid/uuid.dart';
 import '../../../core/database/app_database.dart';
 import '../database/books_dao.dart';
 
+/// Данный код представляет собой реализацию интерфейса `BooksRepository` для работы с базой данных.
+
+/// Он содержит методы для получения, вставки, обновления и удаления книг, а также категорий
+/// и управления списками "избранное" и "последние открытые".
+
+/// В данном случае используется SQLite база данных с помощью `drift` пакета.
+
+/// Некоторые из методов, которые реализованы в этом классе:
+/// - `deleteAllBooks()`: удаляет все книги из базы данных.
+/// - `deleteBook(int bookId)`: удаляет книгу с указанным `bookId` из базы данных.
+/// - `getAllBooks()`: возвращает список всех книг в базе данных.
+/// - `getBookDetails(int bookId)`: возвращает детали книги с указанным `bookId`.
+/// - `insertBook()`: добавляет новую книгу в базу данных.
+/// - `updateBookDetails()`: обновляет детали книги.
+/// - `getAllCategories()`: возвращает список всех категорий в базе данных.
+/// - `insertCategory()`: добавляет новую категорию в базу данных.
+/// - `changeFavorite(int id)`: меняет статус "избранное" для книги с указанным `id`.
+
+/// Также, в этом файле есть вспомогательные функции `bookEntitiesToBookModels` и `bookEntityToBookModel`,
+/// которые используются для преобразования данных из базы данных в модели книги.
+
 abstract class BooksRepository {
   Future<BookModel> getBookDetails(int bookId);
   Future<void> updateBookDetails(BookModel bookModel);
